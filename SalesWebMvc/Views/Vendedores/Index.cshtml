@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SalesWebMvc.Models.Vendedor>
+@{
+    ViewData["Title"] = "Vendedores";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class=" btn btn-default">Inserir Novo Vendedor</a>
+</p>
+
+<table class="table table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(Model => Model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.DataDeNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.SalarioBase)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalarioBase)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Visualizar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

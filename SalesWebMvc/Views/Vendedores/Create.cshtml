@@ -1,0 +1,59 @@
+﻿@model SalesWebMvc.Models.ViewModels.VendedorFormViewModel
+@{
+    ViewData["Title"] = "Inserir Novo Vendedor";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h4>Vendedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">  
+        <form asp-action="Create">
+            @{
+                //puxa as mensagens de erro colocadas nas Models.
+                //Ex.: [Range(1212.0, 50000.0, ErrorMessage = "{0} precisa ser entre {1} e {2}")]
+                //Porém precisa colocar um complemento de código no final da "view" para que o JavaScript mostre a mensagem.
+                //Conforme mostra no final dessa view.
+
+                // Obs2.: Esse comando é colocado no código do campo na view para aparecer a mensagem de erro perto
+                // do campo na tela.
+                // <span asp-validation-for="Vendedor.Nome" class="text-danger"></span>
+            }
+            <div class="form-group">
+                <label asp-for="Vendedor.Nome" class="control-label"></label>
+                <input asp-for="Vendedor.Nome" class="form-control" />
+                <span asp-validation-for="Vendedor.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.Email" class="control-label"></label>
+                <input asp-for="Vendedor.Email" class="form-control" />
+                <span asp-validation-for="Vendedor.Email" class="text-danger"></span>
+            </div><div class="form-group">
+                <label asp-for="Vendedor.DataDeNascimento" class="control-label"></label>
+                <input asp-for="Vendedor.DataDeNascimento" class="form-control" />
+                <span asp-validation-for="Vendedor.DataDeNascimento" class="text-danger"></span>
+            </div><div class="form-group">
+                <label asp-for="Vendedor.SalarioBase" class="control-label"></label>
+                <input asp-for="Vendedor.SalarioBase" class="form-control" />
+                <span asp-validation-for="Vendedor.SalarioBase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor.DepartamentosId" class="control-label"></label>
+                <select asp-for="Vendedor.DepartamentosId" asp-items="@(new SelectList(Model.Departamentos, "Id", "Nome"))" class="form-control"></select>
+                @{
+                    // Model.Departamentos = Primeiro argumento: a fonte de dados onde o sistema irá buscar as informações.
+                    // Id = Segundo argumento: Qual vai vai ser a chave que gerencia esse dado.
+                    // Nome = Terceiro argumento: Qual atributo desse objeto vai aparecer na caia de seleção.
+                }
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                <a asp-action="index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

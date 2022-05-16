@@ -1,0 +1,27 @@
+﻿@model SalesWebMvc.Models.Departamentos
+
+@{
+    ViewData["Title"] = "Exclusão";
+}
+
+<h2>Exclusão</h2>
+
+<h3>Tem certeza que deseja excluir?</h3>
+<div>
+    <h4>Departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>
