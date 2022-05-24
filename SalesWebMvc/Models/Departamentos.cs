@@ -21,9 +21,11 @@ namespace SalesWebMvc.Models
             this.Id = id;
             this.Nome = nome;
             this.DataCadastro = dataCadastro;
+            dataCadastro = DateTime.Now;
         }
         public void AddVendedor(Vendedor vendedor)
         {
+
             Vendedores.Add(vendedor);
         }
         public double TotalDeVendas(DateTime inicial, DateTime final)

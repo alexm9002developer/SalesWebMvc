@@ -58,6 +58,7 @@ namespace SalesWebMvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                departamentos.DataCadastro = DateTime.Now;
                 _context.Add(departamentos);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

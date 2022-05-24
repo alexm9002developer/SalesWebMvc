@@ -13,7 +13,7 @@ namespace SalesWebMvc.Models
         [StringLength(60, MinimumLength = 3, ErrorMessage = "Tamanho do Nome deve ser entre 3 e 60 caracteres")]
         // Informa o tamanho máximo e mínimo para um determinado campo.
         public string Nome { get; set; }
-
+        
         [DataType(DataType.EmailAddress)]
         [EmailAddress(ErrorMessage = "Entre com um email válido")]
         [Required(ErrorMessage = "Informe o email!")]
@@ -24,6 +24,7 @@ namespace SalesWebMvc.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataDeNascimento { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         [Required(ErrorMessage = "Informe o Salário Base!")]
         [Range(1212.0, 50000.0, ErrorMessage = "{0} precisa ser entre {1} e {2}")]
