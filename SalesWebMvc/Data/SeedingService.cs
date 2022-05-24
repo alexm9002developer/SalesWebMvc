@@ -22,13 +22,14 @@ namespace SalesWebMvc.Data
             {
                 return; //Banco de dados já foi populado.
             }
-            Departamentos d1 = new Departamentos(1, "Salão");
-            Departamentos d2 = new Departamentos(2, "Cozinha");
-            Departamentos d3 = new Departamentos(3, "Copa");
-            Departamentos d4 = new Departamentos(4, "Sushi");
-            Departamentos d5 = new Departamentos(5, "Administrativo");
-            Departamentos d6 = new Departamentos(6, "Limpeza");
-            Departamentos d7 = new Departamentos { Id = 7, Nome = "Estoque" }; //Outra forma de fazer.
+            Departamentos d1 = new Departamentos(1, "Salão", new DateTime(2022, 1, 2));
+            Departamentos d2 = new Departamentos(2, "Cozinha", new DateTime(2022, 1, 2));
+            Departamentos d3 = new Departamentos(3, "Copa", new DateTime(2022, 1, 2));
+            Departamentos d4 = new Departamentos(4, "Sushi", new DateTime(2022, 1, 2));
+            Departamentos d5 = new Departamentos(5, "Administrativo", new DateTime(2022, 1, 2));
+            Departamentos d6 = new Departamentos(6, "Limpeza", new DateTime(2022, 1, 2));
+            Departamentos d7 = new Departamentos(7, "Estoque", new DateTime(2022, 1, 2));
+            //Departamentos d7 = new Departamentos { Id = 7, Nome = "Estoque" }; //Outra forma de fazer.
 
             Vendedor v1 = new Vendedor(1, "Bruno", "bruno@gmail.com", new DateTime(1998, 4, 21), 1400.0, d1);
             Vendedor v2 = new Vendedor(2, "Fernando", "fernando@gmail.com", new DateTime(1997, 3, 20), 1400.0, d1);

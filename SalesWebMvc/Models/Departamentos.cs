@@ -11,14 +11,16 @@ namespace SalesWebMvc.Models
         public int Id { get; set; }
         [Display (Name = "Departamento")]
         public string Nome { get; set; }
+        public DateTime DataCadastro { get; set; }
         public ICollection<Vendedor> Vendedores { get; set; } = new List<Vendedor>();
         public Departamentos()
         {
         }
-        public Departamentos(int id, string nome)
+        public Departamentos(int id, string nome, DateTime dataCadastro)
         {
-            Id = id;
-            Nome = nome;
+            this.Id = id;
+            this.Nome = nome;
+            this.DataCadastro = dataCadastro;
         }
         public void AddVendedor(Vendedor vendedor)
         {

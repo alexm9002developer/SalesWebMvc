@@ -10,9 +10,13 @@
     <h4>Departamento</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>Código</dt>
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
         <dd>
             @Html.DisplayFor(model => model.Nome)
         </dd>
