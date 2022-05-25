@@ -24,7 +24,7 @@ namespace SalesWebMvc.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataDeNascimento { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTime DataCadastroVendedor { get; set; }
 
         [Required(ErrorMessage = "Informe o Salário Base!")]
         [Range(1212.0, 50000.0, ErrorMessage = "{0} precisa ser entre {1} e {2}")]
@@ -41,14 +41,15 @@ namespace SalesWebMvc.Models
         public Vendedor()
         {
         }
-        public Vendedor(int id, string nome, string email, DateTime dataDeNascimento, double salarioBase, Departamentos departamentos)
+        public Vendedor(int id, string nome, string email, DateTime dataDeNascimento, DateTime dataCadastroVendedor, double salarioBase, Departamentos departamentos)
         {
-            Id = id;
-            Nome = nome;
-            Email = email;
-            DataDeNascimento = dataDeNascimento;
-            SalarioBase = salarioBase;
-            Departamentos = departamentos;
+            this.Id = id;
+            this.Nome = nome;
+            this.Email = email;
+            this.DataDeNascimento = dataDeNascimento;
+            this.DataCadastroVendedor = dataCadastroVendedor;
+            this.SalarioBase = salarioBase;
+            this.Departamentos = departamentos;
         }
         public void AddVendaVendedor(Vendas vd)
         {

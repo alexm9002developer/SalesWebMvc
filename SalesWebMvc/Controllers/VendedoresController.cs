@@ -28,6 +28,7 @@ namespace SalesWebMvc.Controllers
         }
         public async Task<IActionResult> Create()
         {
+
             var departamentos = await _departamentosServicos.FindAllAsync();
             var viewModel = new VendedorFormViewModel { Departamentos = departamentos };
             return View(viewModel);
@@ -43,6 +44,7 @@ namespace SalesWebMvc.Controllers
                 var viewModel = new VendedorFormViewModel { Vendedor = vendedor, Departamentos = departamentos };
                 return View(viewModel);
             }
+            vendedor.DataCadastroVendedor = DateTime.Now;
             await _vendedoresServicos.InsertAsync(vendedor);
             return RedirectToAction(nameof(Index));
         }

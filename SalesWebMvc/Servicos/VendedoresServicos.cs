@@ -22,6 +22,7 @@ namespace SalesWebMvc.Servicos
         }
         public async Task InsertAsync(Vendedor obj)
         {
+            
             _context.Add(obj);
             await _context.SaveChangesAsync();
         }
