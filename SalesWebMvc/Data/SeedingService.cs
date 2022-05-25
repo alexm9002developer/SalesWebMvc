@@ -31,15 +31,15 @@ namespace SalesWebMvc.Data
             Departamentos d7 = new Departamentos(7, "Estoque", new DateTime(2022, 1, 2));
             //Departamentos d7 = new Departamentos { Id = 7, Nome = "Estoque" }; //Outra forma de fazer.
 
-            Vendedor v1 = new Vendedor(1, "Bruno", "bruno@gmail.com", new DateTime(1998, 4, 21), new DateTime(2022, 1, 2), 1400.0, d1);
-            Vendedor v2 = new Vendedor(2, "Fernando", "fernando@gmail.com", new DateTime(1997, 3, 20), new DateTime(2022, 1, 2), 1400.0, d1);
-            Vendedor v3 = new Vendedor(3, "Leandro", "leandro@gmail.com", new DateTime(1996, 2, 19), new DateTime(2022, 1, 2), 1400.0, d1);
-            Vendedor v4 = new Vendedor(4, "Tiago", "tiago@gmail.com", new DateTime(1999, 6, 18), new DateTime(2022, 1, 2), 1400.0, d1);
-            Vendedor v5 = new Vendedor(5, "Lucas", "lucas@gmail.com", new DateTime(2000, 1, 17), new DateTime(2022, 1, 2), 1400.0, d4);
-            Vendedor v6 = new Vendedor(6, "Virginio", "virginio@gmail.com", new DateTime(1970, 7, 25), new DateTime(2022, 1, 2), 1400.0, d4);
-            Vendedor v7 = new Vendedor(7, "Josandro", "josandro@gmail.com", new DateTime(1995, 8, 28), new DateTime(2022, 1, 2), 1400.0, d4);
-            Vendedor v8 = new Vendedor(8, "Jorge", "jorge@gmail.com", new DateTime(1976, 9, 29), new DateTime(2022, 1, 2), 1400.0, d4);
-            Vendedor v9 = new Vendedor(9, "Nilo", "nilo@gmail.com", new DateTime(1984, 5, 12), new DateTime(2022, 1, 2), 1400.0, d4);
+            Vendedor v1 = new Vendedor(1, "Bruno", "bruno@gmail.com", new DateTime(1998, 4, 21), 24, new DateTime(2022, 1, 2), 1400.0, d1);
+            Vendedor v2 = new Vendedor(2, "Fernando", "fernando@gmail.com", new DateTime(1997, 3, 20), 25, new DateTime(2022, 1, 2), 1400.0, d1);
+            Vendedor v3 = new Vendedor(3, "Leandro", "leandro@gmail.com", new DateTime(1996, 2, 19), 26, new DateTime(2022, 1, 2), 1400.0, d1);
+            Vendedor v4 = new Vendedor(4, "Tiago", "tiago@gmail.com", new DateTime(1999, 6, 18), 23, new DateTime(2022, 1, 2), 1400.0, d1);
+            Vendedor v5 = new Vendedor(5, "Lucas", "lucas@gmail.com", new DateTime(2000, 1, 17), 22, new DateTime(2022, 1, 2), 1400.0, d4);
+            Vendedor v6 = new Vendedor(6, "Virginio", "virginio@gmail.com", new DateTime(1970, 7, 25), 52, new DateTime(2022, 1, 2), 1400.0, d4);
+            Vendedor v7 = new Vendedor(7, "Josandro", "josandro@gmail.com", new DateTime(1995, 8, 28), 27, new DateTime(2022, 1, 2), 1400.0, d4);
+            Vendedor v8 = new Vendedor(8, "Jorge", "jorge@gmail.com", new DateTime(1976, 9, 29), 46, new DateTime(2022, 1, 2), 1400.0, d4);
+            Vendedor v9 = new Vendedor(9, "Nilo", "nilo@gmail.com", new DateTime(1984, 5, 12), 38, new DateTime(2022, 1, 2), 1400.0, d4);
 
             Vendas rv1 = new Vendas(1, new DateTime(2022, 01, 25), 11000.0, VendaStatus.Faturado, v1);
             Vendas rv2 = new Vendas(2, new DateTime(2022, 01, 4), 7000.0, VendaStatus.Faturado, v5);

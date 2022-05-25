@@ -96,3 +96,4 @@ D:\Visual Studio\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.dll
 D:\Visual Studio\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.pdb
 D:\Visual Studio\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.genruntimeconfig.cache
 D:\Visual Studio\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.csproj.CopyComplete
+D:\Visual Studio\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\ErroDeIdade.cshtml.g.cs

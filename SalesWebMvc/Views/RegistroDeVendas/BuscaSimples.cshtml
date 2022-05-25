@@ -29,8 +29,11 @@
     </div>
     <div class="panel-body">
         <style>
-            .AlteraCor {
+            .DefineCorVermelha {
                 color: red
+            }
+            .DefineCorVerde{
+                color:green;
             }
         </style>
         <table class="table table-striped table-hover">
@@ -59,54 +62,39 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    @if (item.ValorDaVenda <= 2999)
+                    @if (item.ValorDaVenda < 3000)
                     {
-                        <tr class="AlteraCor">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DataDaVenda)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Vendedor.Nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Vendedor.Departamentos.Nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ValorDaVenda)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                        </tr>
+                        ViewData["Cor"] = "DefineCorVermelha";
 
                     }
-                    if (item.ValorDaVenda >= 3000)
+                    else if (item.ValorDaVenda >= 5000)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DataDaVenda)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Vendedor.Nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Vendedor.Departamentos.Nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ValorDaVenda)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                        </tr>
+                        ViewData["Cor"] = "DefineCorVerde";
                     }
-
+                    else
+                    {
+                        ViewData["Cor"] = "";
+                    }
+                    <tr class="@ViewData["Cor"]">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDaVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendedor.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendedor.Departamentos.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorDaVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+            </tr>
                 }
             </tbody>
         </table>

@@ -24,6 +24,7 @@ namespace SalesWebMvc.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataDeNascimento { get; set; }
+        public int Idade { get; set; }
         public DateTime DataCadastroVendedor { get; set; }
 
         [Required(ErrorMessage = "Informe o Salário Base!")]
@@ -41,12 +42,13 @@ namespace SalesWebMvc.Models
         public Vendedor()
         {
         }
-        public Vendedor(int id, string nome, string email, DateTime dataDeNascimento, DateTime dataCadastroVendedor, double salarioBase, Departamentos departamentos)
+        public Vendedor(int id, string nome, string email, DateTime dataDeNascimento, int idade, DateTime dataCadastroVendedor, double salarioBase, Departamentos departamentos)
         {
             this.Id = id;
             this.Nome = nome;
             this.Email = email;
             this.DataDeNascimento = dataDeNascimento;
+            this.Idade = idade;
             this.DataCadastroVendedor = dataCadastroVendedor;
             this.SalarioBase = salarioBase;
             this.Departamentos = departamentos;
@@ -62,6 +64,19 @@ namespace SalesWebMvc.Models
         public double TotalDeVendas(DateTime inicial, DateTime final)
         {
             return VendaVendedor.Where(vd => vd.DataDaVenda >= inicial && vd.DataDaVenda <= final).Sum(vd => vd.ValorDaVenda);
+        }
+        public int CalculaIdade(DateTime dataDeNascimento)
+        {
+            int IdadeCalculada = DateTime.Now.Year - dataDeNascimento.Year;
+            if (DateTime.Now.DayOfYear <= dataDeNascimento.DayOfYear)
+            {
+                IdadeCalculada = IdadeCalculada - 1;
+                //outra forma de fazer decremento.
+                //IdadeCalculada--;
+            }
+            return IdadeCalculada;
+            // outra forma de fazer - if implícito.
+            //return (DateTime.Now.DayOfYear < dataDeNascimento.DayOfYear) ? IdadeCalculada-- : IdadeCalculada;
         }
     }
 }
