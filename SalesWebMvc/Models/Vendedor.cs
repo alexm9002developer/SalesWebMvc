@@ -13,7 +13,7 @@ namespace SalesWebMvc.Models
         [StringLength(60, MinimumLength = 3, ErrorMessage = "Tamanho do Nome deve ser entre 3 e 60 caracteres")]
         // Informa o tamanho máximo e mínimo para um determinado campo.
         public string Nome { get; set; }
-        
+
         [DataType(DataType.EmailAddress)]
         [EmailAddress(ErrorMessage = "Entre com um email válido")]
         [Required(ErrorMessage = "Informe o email!")]
@@ -24,17 +24,16 @@ namespace SalesWebMvc.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataDeNascimento { get; set; }
-        public int Idade { get; set; }
         public DateTime DataCadastroVendedor { get; set; }
 
         [Required(ErrorMessage = "Informe o Salário Base!")]
         [Range(1212.0, 50000.0, ErrorMessage = "{0} precisa ser entre {1} e {2}")]
         // {1} e {2} são números de referência para a mensagem - {0} É o nome do campo.
-        [Display (Name = "Salário")]
+        [Display(Name = "Salário")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double SalarioBase { get; set; }
 
-        [Display (Name = "Departamento")] // para mudar o nome do Campo na visualização da tela
+        [Display(Name = "Departamento")] // para mudar o nome do Campo na visualização da tela
         // acrescentar a linha: "using System.ComponentModel.DataAnnotations;" no início do código.
         public Departamentos Departamentos { get; set; }
         public int DepartamentosId { get; set; }
@@ -42,13 +41,12 @@ namespace SalesWebMvc.Models
         public Vendedor()
         {
         }
-        public Vendedor(int id, string nome, string email, DateTime dataDeNascimento, int idade, DateTime dataCadastroVendedor, double salarioBase, Departamentos departamentos)
+        public Vendedor(int id, string nome, string email, DateTime dataDeNascimento, DateTime dataCadastroVendedor, double salarioBase, Departamentos departamentos)
         {
             this.Id = id;
             this.Nome = nome;
             this.Email = email;
             this.DataDeNascimento = dataDeNascimento;
-            this.Idade = idade;
             this.DataCadastroVendedor = dataCadastroVendedor;
             this.SalarioBase = salarioBase;
             this.Departamentos = departamentos;

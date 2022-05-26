@@ -7,7 +7,7 @@
 <h4>Vendedor</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">  
+    <div class="col-md-4">
         <form asp-action="Create">
             @{
                 //puxa as mensagens de erro colocadas nas Models.
@@ -38,7 +38,7 @@
                 <span asp-validation-for="Vendedor.SalarioBase" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Vendedor.DepartamentosId" class="control-label"></label>
+                <label>Departamento</label>
                 <select asp-for="Vendedor.DepartamentosId" asp-items="@(new SelectList(Model.Departamentos, "Id", "Nome"))" class="form-control"></select>
                 @{
                     // Model.Departamentos = Primeiro argumento: a fonte de dados onde o sistema irá buscar as informações.
@@ -48,10 +48,12 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-default" />
-                <a asp-action="index">Voltar</a>
             </div>
         </form>
     </div>
+</div>
+<div>
+    <a asp-action="index">Voltar</a>
 </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
