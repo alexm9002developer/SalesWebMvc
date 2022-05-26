@@ -32,6 +32,14 @@
             <h3 class="panel-title">Departamento @departamentosGroup.Key.Nome, Total Vendas = @departamentosGroup.Key.TotalDeVendas(DataInicial, DataFinal).ToString("F2")</h3>
         </div>
         <div class="panel-body">
+            <style>
+                .DefineCorVermelha {
+                    color: red;
+                }
+                .DefineCorVerde {
+                    color: green;
+                }
+            </style>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr class="success">
@@ -52,11 +60,23 @@
                 <tbody>
                     @foreach (var item in departamentosGroup)
                     {
-                        <tr>
+                        @if (item.ValorDaVenda < 3000)
+                        {
+                            ViewData["Cor"] = "DefineCorVermelha";
+                        }
+                        else if (item.ValorDaVenda >= 5000)
+                        {
+                            ViewData["Cor"] = "DefineCorVerde";
+                        }
+                        else
+                        {
+                            ViewData["Cor"] = "";
+                        }
+                        <tr class="@ViewData["Cor"]">
                             <td>
                                 @Html.DisplayFor(modelItem => item.DataDaVenda)
                             </td>
-                            <td class="AlteraCor" style="color:green">
+                            <td>
                                 @Html.DisplayFor(modelItem => item.ValorDaVenda)
                             </td>
                             <td>
@@ -65,8 +85,8 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Status)
                             </td>
-                        </tr>
-                    }
+                            </tr>
+                        }
                 </tbody>
             </table>
         </div>

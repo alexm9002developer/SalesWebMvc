@@ -46,7 +46,7 @@ namespace SalesWebMvc.Controllers
             }
             vendedor.DataCadastroVendedor = DateTime.Now;
             int Idade = vendedor.CalculaIdade(vendedor.DataDeNascimento);
-           if (Idade >= 18)
+            if (Idade >= 18)
             {
                 await _vendedoresServicos.InsertAsync(vendedor);
                 return RedirectToAction(nameof(Index));
@@ -55,7 +55,7 @@ namespace SalesWebMvc.Controllers
             {
                 return View("ErroDeIdade");
             }
-           
+
         }
         public async Task<IActionResult> Delete(int? id)
         {

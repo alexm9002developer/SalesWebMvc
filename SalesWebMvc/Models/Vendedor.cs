@@ -75,8 +75,8 @@ namespace SalesWebMvc.Models
                 //IdadeCalculada--;
             }
             return IdadeCalculada;
-            // outra forma de fazer - if implícito.
-            //return (DateTime.Now.DayOfYear < dataDeNascimento.DayOfYear) ? IdadeCalculada-- : IdadeCalculada;
+            // outra forma de fazer é if implícito.
+            //return (DateTime.Now.DayOfYear <= dataDeNascimento.DayOfYear) ? IdadeCalculada-- : IdadeCalculada;
         }
     }
 }

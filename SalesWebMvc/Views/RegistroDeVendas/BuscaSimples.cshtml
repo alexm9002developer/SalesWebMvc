@@ -30,10 +30,10 @@
     <div class="panel-body">
         <style>
             .DefineCorVermelha {
-                color: red
+                color: red;
             }
-            .DefineCorVerde{
-                color:green;
+            .DefineCorVerde {
+                color: green;
             }
         </style>
         <table class="table table-striped table-hover">
@@ -65,7 +65,6 @@
                     @if (item.ValorDaVenda < 3000)
                     {
                         ViewData["Cor"] = "DefineCorVermelha";
-
                     }
                     else if (item.ValorDaVenda >= 5000)
                     {
@@ -76,25 +75,25 @@
                         ViewData["Cor"] = "";
                     }
                     <tr class="@ViewData["Cor"]">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataDaVenda)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Vendedor.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Vendedor.Departamentos.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValorDaVenda)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-            </tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataDaVenda)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vendedor.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vendedor.Departamentos.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorDaVenda)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
